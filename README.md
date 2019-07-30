@@ -1,10 +1,10 @@
 # WordscapesCheater
 A program that helps you cheat at the Scrabble-like mobile app, Wordscapes.
 
-You will be able to enter in the set of characters that Wordscapes gives you, and then choose from several different options, depending on what you want to be returned to you.
+You will be able to enter in the set of characters that Wordscapes gives you, and the program would return matching words based on the characters you provided. There will be several options.
 
-It would either return all possible words that could be made out of those letter.
+One option would simply return all valid words of all lengths (all matching words, between 3 and 7 letters long)
 
-Or it would return matching words of a given length.
+Another option would only return matching words of a given length.
 
-And finally, you could enter in the location of letters you have already found, and it would then return any matching words.
+And the final option will be that you enter in the location of letters you have already found, (i.e. ST_C_) and it would then return any matching words.
