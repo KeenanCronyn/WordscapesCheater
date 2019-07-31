@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WordscapesCheat.Properties;
 
 namespace WordscapesCheat
 {
     public static class CheatFunctions
-    {
+    {   
+        public static List<string> GetDictionary()
+        {
+            return Resources._2of12inf.Split(
+                new[] { Environment.NewLine },
+                StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.TrimEnd(new[] { '%', '!' }))
+                .ToList();
+        }
+
         public static int[] BuildOccurenceArray(string inputString)
         {
             const int A_ASCII = 97;

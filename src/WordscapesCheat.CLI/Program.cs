@@ -11,10 +11,10 @@ namespace WordscapesCheat.CLI
     {        
         static void Main(string[] args)
         {
-            string characterSet = "catmbotle";
-            List<string> fakeDictionary = new List<string>() { "cat", "mat", "cab", "catm" };
+            string characterSet = "penis";
+            List<string> dictionary = CheatFunctions.GetDictionary();
             
-            PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(characterSet, fakeDictionary));
+            PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(characterSet, dictionary));
         }
 
         public static void PrintMatchingWords(string[] matchingWordsArray)
