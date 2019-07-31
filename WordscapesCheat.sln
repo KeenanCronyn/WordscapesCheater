@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordscapesCheatCopy", "src\WordscapesCheatCopy.csproj", "{FF29FD59-7363-4B26-A24B-92FDDD8A2E51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordscapesCheat", "src\WordscapesCheat.csproj", "{FF29FD59-7363-4B26-A24B-92FDDD8A2E51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FF29FD59-7363-4B26-A24B-92FDDD8A2E51}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WordscapesCheatCopy</RootNamespace>
-    <AssemblyName>WordscapesCheatCopy</AssemblyName>
+    <RootNamespace>WordscapesCheat</RootNamespace>
+    <AssemblyName>WordscapesCheat</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
