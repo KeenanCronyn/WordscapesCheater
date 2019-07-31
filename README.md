@@ -1,4 +1,7 @@
 # WordscapesCheater
+
+![Wordscapes Logo](docs/images/logo.png "Wordscapes Logo")
+
 A program that helps you cheat at the Scrabble-like mobile app, Wordscapes.
 
 You will be able to enter in the set of characters that Wordscapes gives you, and the program would return matching words based on the characters you provided. There will be several options.
