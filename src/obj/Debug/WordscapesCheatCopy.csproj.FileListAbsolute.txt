@@ -1,7 +1,0 @@
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\bin\Debug\WordscapesCheatCopy.exe.config
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\bin\Debug\WordscapesCheatCopy.exe
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\bin\Debug\WordscapesCheatCopy.pdb
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\obj\Debug\WordscapesCheatCopy.csprojAssemblyReference.cache
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\obj\Debug\WordscapesCheatCopy.csproj.CoreCompileInputs.cache
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\obj\Debug\WordscapesCheatCopy.exe
-C:\Users\keenan\Desktop\C# Programs\WordscapesCheatCopy\WordscapesCheatCopy\obj\Debug\WordscapesCheatCopy.pdb
