@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FF29FD59-7363-4B26-A24B-92FDDD8A2E51}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WordscapesCheat</RootNamespace>
-    <AssemblyName>WordscapesCheat</AssemblyName>
+    <RootNamespace>WordscapesCheat.CLI</RootNamespace>
+    <AssemblyName>WordscapesCheatCLI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordscapesCheat\WordscapesCheat.csproj">
+      <Project>{a3415268-b8c1-4a07-af24-ef2cfd2c7e95}</Project>
+      <Name>WordscapesCheat</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

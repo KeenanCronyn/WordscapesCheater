@@ -1,7 +1,0 @@
-C:\Dev\git\WordscapesCheater\src\bin\Debug\WordscapesCheat.exe.config
-C:\Dev\git\WordscapesCheater\src\bin\Debug\WordscapesCheat.exe
-C:\Dev\git\WordscapesCheater\src\bin\Debug\WordscapesCheat.pdb
-C:\Dev\git\WordscapesCheater\src\obj\Debug\WordscapesCheat.csprojAssemblyReference.cache
-C:\Dev\git\WordscapesCheater\src\obj\Debug\WordscapesCheat.csproj.CoreCompileInputs.cache
-C:\Dev\git\WordscapesCheater\src\obj\Debug\WordscapesCheat.exe
-C:\Dev\git\WordscapesCheater\src\obj\Debug\WordscapesCheat.pdb
