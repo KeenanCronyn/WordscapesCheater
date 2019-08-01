@@ -18,6 +18,18 @@ namespace WordscapesCheat
                 .ToList();
         }
 
+        public static string ConvertStringArrayToString(string[] array)
+        {   // KC - I took the below from a URL: "https://www.dotnetperls.com/convert-string-array-string"
+
+            // Concatenate all the elements into a StringBuilder.
+            StringBuilder builder = new StringBuilder();
+            foreach (string value in array)
+            {
+                builder.Append(value);
+            }
+            return builder.ToString();
+        }
+
         public static int[] BuildOccurenceArray(string inputString)
         {
             const int A_ASCII = 97;

@@ -11,7 +11,7 @@ namespace WordscapesCheat.CLI
     {        
         static void Main(string[] args)
         {
-            string characterSet = "penis";
+            string characterSet = CheatFunctions.ConvertStringArrayToString(args);
             List<string> dictionary = CheatFunctions.GetDictionary();
             
             PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(characterSet, dictionary));
