@@ -9,7 +9,6 @@ namespace WordscapesCheat
 {
     public static class CheatFunctions
     {
-
         /// <summary>
         /// This returns a list that functions as a dictionary.
         /// </summary>
