@@ -31,10 +31,13 @@ namespace WordscapesCheat.CLI
             PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(characterSet, dictionary));
         }
 
+        /// <summary>
+        /// The below method takes the string array created in "BuildMatchingWordsArray" method
+        /// (found in CheatFunctions.cs) and then spits out all the words in the array.
+        /// </summary>
+        /// <param name="matchingWordsArray"></param>
         public static void PrintMatchingWords(string[] matchingWordsArray)
         {
-            // this prints out the words in the array if successful. 
-            // I could include something that prints if nothing is in the array.
             if (matchingWordsArray.Length == 0)
                 Console.WriteLine("No words could be found that match what you asked for");
             else
@@ -46,6 +49,12 @@ namespace WordscapesCheat.CLI
             }
         }
 
+        /// <summary>
+        ///  This method initilizes a string array of possible args asking for help,
+        ///  and then it checks if any of those items have been passed.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         private static bool ArgsNeedsHelp(string[] args)
         {
             string[] HelpArgs = new[] { "/?", "--help", "/help", "?" };
