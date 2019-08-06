@@ -12,20 +12,18 @@ namespace WordscapesCheat.Tests
     public class CheatFunctionsTests
     {
         [TestMethod()]
-        public void OccurenceArray_PassValidString_Succeed()
+        public void BuildOccurenceArray_PassValidString_Succeed()
         {
             // arrange
             string validString = "abc";
-            string[] expectedArray = new string[26];
-
-            const int A_ASCII = 97;
-            int[] occurenceArray = new int[26];
+            // below is an array of the same size, of what I think should be the same result, but the test fails.
+            int[] expectedArray = new int[26] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             // act
+            int[] arrayResult = CheatFunctions.BuildOccurenceArray(validString);
 
             // assert
-
-            Assert.Fail();
+            Assert.AreEqual(expectedArray, arrayResult);
         }
     }
 }
