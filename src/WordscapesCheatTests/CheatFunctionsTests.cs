@@ -16,14 +16,11 @@ namespace WordscapesCheat.Tests
         {
             // arrange
             string validString = "abc";
-            // below is an array of the same size, of what I think should be the same result, but the test fails.
             int[] expectedArray = new int[26] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             // act
-            int[] arrayResult = CheatFunctions.BuildOccurenceArray(validString);
-
             // assert
-            Assert.AreEqual(expectedArray, arrayResult);
+            CollectionAssert.AreEqual(expectedArray, CheatFunctions.BuildOccurenceArray(validString));
         }
     }
 }
