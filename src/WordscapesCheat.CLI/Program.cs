@@ -37,7 +37,7 @@ namespace WordscapesCheat.CLI
         /// (found in CheatFunctions.cs) and then spits out all the words in the array.
         /// </summary>
         /// <param name="matchingWordsArray"></param>
-        public static void PrintMatchingWords(string[] matchingWordsArray)
+        private static void PrintMatchingWords(string[] matchingWordsArray)
         {
             if (matchingWordsArray.Length == 0)
                 Console.WriteLine("No words could be found that match what you asked for");

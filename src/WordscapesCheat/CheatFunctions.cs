@@ -104,7 +104,7 @@ namespace WordscapesCheat
         /// <param name="givenLettersArray"></param>
         /// <param name="wordArray"></param>
         /// <returns></returns>
-        public static bool TestIfMatching(int[] givenLettersArray, int[] wordArray)
+        private static bool TestIfMatching(int[] givenLettersArray, int[] wordArray)
         {
             // For each element in the array of a word, if it isn't greater than what's in the array of the character set, then return false. 
             for (int i = 0; i < givenLettersArray.Length; i++)
