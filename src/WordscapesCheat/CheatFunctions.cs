@@ -9,6 +9,8 @@ namespace WordscapesCheat
 {
     public static class CheatFunctions
     {
+        // I'm adding this comment to see what happens when the build is tested
+
         /// <summary>
         /// This returns a list that functions as a dictionary.
         /// </summary>
