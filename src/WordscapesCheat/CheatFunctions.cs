@@ -35,7 +35,7 @@ namespace WordscapesCheat
             // For each character in the input string, based on its ASCII code, add it to the above array at the appropriate point.
             foreach (byte b in Encoding.ASCII.GetBytes(inputString.ToLower()))
             {
-                occurenceArray[b - A_ASCII];
+                occurenceArray[b - A_ASCII;
             }
 
             return occurenceArray;
