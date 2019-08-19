@@ -84,7 +84,7 @@ namespace WordscapesCheat
 
             foreach (string word in dictionary)
             {
-                // Behaves the same as the previous method, but this time only returns word of a length thst is passed to it.
+                // Behaves the same as the previous method, but this time only returns word of a length that is passed to it.
                 if (word.Length == wordLength)
                 {
                     int[] wordArray = BuildOccurenceArray(word);
