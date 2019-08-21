@@ -8,19 +8,16 @@ using System.Threading.Tasks;
 
 namespace WordscapesCheat.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class CheatFunctionsTests
     {
-        [TestMethod()]
-        public void BuildOccurenceArray_PassValidString_Succeed()
+        [DataTestMethod]
+        [DataRow("abc", new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        [DataRow("azaza", new int[] { 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2 })]
+        [DataRow("", new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        public void BuildOccurenceArray_PassValidString_Succeed(string input, int[] expected)
         {
-            // arrange
-            string validString = "abc";
-            int[] expectedArray = new int[26] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-            // act
-            // assert
-            CollectionAssert.AreEqual(expectedArray, CheatFunctions.BuildOccurenceArray(validString));
+            CollectionAssert.AreEqual(expected, CheatFunctions.BuildOccurenceArray(input));
         }
     }
 }
