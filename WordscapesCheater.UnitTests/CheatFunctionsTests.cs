@@ -9,14 +9,16 @@ namespace WordscapesCheat.UnitTests
 {
     public class CheatFunctionsTests
     {
-        public void BuildMatchingWordsArray_BadString_ReturnsFalse(string givenLetters, string[] expected)
+        [TestCase()]
+        [TestCase("abc", new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        [TestCase("azaza", new int[] { 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2 })]
+        [TestCase("", new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        public void BuildMatchingWordsArray_BadString_ReturnsFalse(string input, string[] expectedResult)
         {
-            string givenLetters = "ab-c";
-            List<string> dictionary = CheatFunctions.GetDictionary();
 
-            string[] ArrayResult = CheatFunctions.BuildMatchingWordsArray(givenLetters, dictionary);
+            string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
 
-            Assert.
+            CollectionAssert.AreEqual(arrayResult, expectedResult);
 
         }
     }
