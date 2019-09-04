@@ -19,5 +19,24 @@ namespace WordscapesCheat.Tests
         {
             CollectionAssert.AreEqual(expected, CheatFunctions.BuildOccurenceArray(input));
         }
+
+        [DataTestMethod]
+        [DataRow("abc", new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        [DataRow("azaza", new int[] { 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2 })]
+        [DataRow("", new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        public void BuildMatchingWordsArray_ValidString_Succeed(string input, string[] expectedResult)
+        {
+            string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
+
+            CollectionAssert.AreEqual(arrayResult, expectedResult);
+        }
+
+        //[DataTestMethod]
+        //[DataRow("a-c", new int[] { 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
+        //public void BuildOccurenceArray_PassInvalidString_Fail(string input, int[] expected)
+        //{
+        //    CollectionAssert.AreEqual(expected, CheatFunctions.BuildOccurenceArray(input));
+        //}
+
     }
 }
