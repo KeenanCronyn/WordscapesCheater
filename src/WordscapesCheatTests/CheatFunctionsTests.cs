@@ -21,15 +21,18 @@ namespace WordscapesCheat.Tests
         }
 
         [DataTestMethod]
-        [DataRow("abc", new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
-        [DataRow("azaza", new int[] { 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2 })]
-        [DataRow("", new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
-        public void BuildMatchingWordsArray_ValidString_Succeed(string input, string[] expectedResult)
+        [DataRow("abc", new string[] { "bac" })]
+        public void BuildMatchingWordsArray_ValidString_Succeed(string _input, List<string> _expectedResult)
         {
+            string input = "abc";
+            List<string> matchingWordsList = new List<string>();
+            matchingWordsList.Add("cab");
+            string[] expectedResult = matchingWordsList.ToArray();       
+
             string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
 
-            CollectionAssert.AreEqual(arrayResult, expectedResult);
-        }
+            CollectionAssert.AreEquivalent(arrayResult, expectedResult);
+        }        
 
         //[DataTestMethod]
         //[DataRow("a-c", new int[] { 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
