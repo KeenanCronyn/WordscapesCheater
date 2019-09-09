@@ -27,9 +27,8 @@ namespace WordscapesCheat.CLI
             //We can use the other args for other stuff later
             //e.g. word count or letter position
             string characterSet = args[0];
-            string validTest = "abc";
             List<string> dictionary = CheatFunctions.GetDictionary();
-            PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(validTest, dictionary));
+            PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(characterSet, dictionary));
         }
 
         /// <summary>
