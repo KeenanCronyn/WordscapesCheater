@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 namespace WordscapesCheat.Tests
 {
     [TestClass]
-    public class CheatFunctionsTests : CheatFunctions
-        // I derived this class from CheatFunctions because otherwise I could not test the private functions
+    public class CheatFunctionsTests
     {
         [DataTestMethod]
         [DataRow("abc", new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
@@ -27,9 +26,9 @@ namespace WordscapesCheat.Tests
         public void BuildMatchingWordsArray_ValidString_Succeed(string input, string stringResult)
         {
             string[] expectedResult = stringResult.Split(';').ToArray();
-            
-            string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
 
+            string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
             CollectionAssert.AreEquivalent(arrayResult, expectedResult);
+        }
     }
 }

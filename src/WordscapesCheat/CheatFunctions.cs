@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using WordscapesCheat.Properties;
 
 namespace WordscapesCheat
 {
-    public class CheatFunctions
+    public static class CheatFunctions
     {
         /// <summary>
         /// This returns a list that functions as a dictionary.
@@ -104,8 +105,8 @@ namespace WordscapesCheat
         /// <param name="givenLettersArray"></param>
         /// <param name="wordArray"></param>
         /// <returns></returns>
-        protected static bool TestIfMatching(int[] givenLettersArray, int[] wordArray)
-            // I changed this from private to protected so that the tests class could inherit it
+        internal static bool TestIfMatching(int[] givenLettersArray, int[] wordArray)
+            // I changed this from protected to internal so that the tests class could use it
         {
             // For each element in the array of a word, if it isn't greater than what's in the array of the character set, then return false. 
             for (int i = 0; i < givenLettersArray.Length; i++)
