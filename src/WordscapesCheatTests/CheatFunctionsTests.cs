@@ -27,20 +27,9 @@ namespace WordscapesCheat.Tests
         public void BuildMatchingWordsArray_ValidString_Succeed(string input, string stringResult)
         {
             string[] expectedResult = stringResult.Split(';').ToArray();
-
+            
             string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
 
             CollectionAssert.AreEquivalent(arrayResult, expectedResult);
-        }
-
-        [DataTestMethod]
-        [DataRow("abc", "cab")]
-        public void TestIfMatching_PassValidArray_Succeed(string givenLetters, string wordInDictionary)
-        {
-            int[] givenLettersArray = CheatFunctions.BuildOccurenceArray(givenLetters);
-            int[] wordArray = CheatFunctions.BuildOccurenceArray(wordInDictionary);
-
-            Assert.IsTrue(CheatFunctions.TestIfMatching(givenLettersArray, wordArray));
-        }
     }
 }
