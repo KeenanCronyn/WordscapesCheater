@@ -19,5 +19,17 @@ namespace WordscapesCheat.Tests
         {
             CollectionAssert.AreEqual(expected, CheatFunctions.BuildOccurenceArray(input));
         }
+
+        [DataTestMethod]
+        [DataRow("abc", "cab")]
+        [DataRow("test", "set;stet;test")]
+        public void BuildMatchingWordsArray_ValidString_Succeed(string input, string stringResult)
+        {
+            string[] expectedResult = stringResult.Split(';').ToArray();
+
+            string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
+
+            CollectionAssert.AreEquivalent(arrayResult, expectedResult);
+        }        
     }
 }
