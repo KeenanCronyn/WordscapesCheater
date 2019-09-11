@@ -10,6 +10,7 @@ namespace WordscapesCheat.Tests
 {
     [TestClass]
     public class CheatFunctionsTests
+        // I derived this class from CheatFunctions because otherwise I could not test the private functions
     {
         [DataTestMethod]
         [DataRow("abc", new int[] { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })]
@@ -26,10 +27,17 @@ namespace WordscapesCheat.Tests
         public void BuildMatchingWordsArray_ValidString_Succeed(string input, string stringResult)
         {
             string[] expectedResult = stringResult.Split(';').ToArray();
-
             string[] arrayResult = CheatFunctions.BuildMatchingWordsArray(input, CheatFunctions.GetDictionary());
-
             CollectionAssert.AreEquivalent(arrayResult, expectedResult);
-        }        
+        }
+
+        [DataTestMethod]
+        [DataRow("abc", "cab")]
+        public void TestIfMatching_PassValidArray_Succeed(string givenLetters, string wordInDictionary)
+        {
+            int[] givenLettersArray = CheatFunctions.BuildOccurenceArray(givenLetters);
+            int[] wordArray = CheatFunctions.BuildOccurenceArray(wordInDictionary);
+            Assert.IsTrue(CheatFunctions.TestIfMatching(givenLettersArray, wordArray));
+        }
     }
 }
