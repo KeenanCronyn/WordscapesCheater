@@ -28,17 +28,24 @@ namespace WordscapesCheat
         /// <returns></returns>
         public static int[] BuildOccurenceArray(string inputString)
         {
-            // Sets an ASCII count from "a", and initializes an array that matches the alphabet
-            const int A_ASCII = 97;
-            int[] occurenceArray = new int[26];
-
-            // For each character in the input string, based on its ASCII code, add it to the above array at the appropriate point.
-            foreach (byte b in Encoding.ASCII.GetBytes(inputString.ToLower()))
+            try
             {
-                occurenceArray[b - A_ASCII]++;
-            }
+                // Sets an ASCII count from "a", and initializes an array that matches the alphabet
+                const int A_ASCII = 97;
+                int[] occurenceArray = new int[26];
 
-            return occurenceArray;
+                // For each character in the input string, based on its ASCII code, add it to the above array at the appropriate point.
+                foreach (byte b in Encoding.ASCII.GetBytes(inputString.ToLower()))
+                {
+                    occurenceArray[b - A_ASCII]++;
+                }
+
+                return occurenceArray;
+            }
+            catch
+            {
+                throw new ArgumentOutOfRangeException(inputString, "String must only contain chars between a-z");
+            }
         }
 
         /// <summary>
@@ -49,25 +56,32 @@ namespace WordscapesCheat
         /// <returns></returns>
         public static string[] BuildMatchingWordsArray(string givenLetters, List<string> dictionary)
         {
-            // Turns the character set into an "occurence array" and initilizes a list to store matching words
-            List<string> matchingWordsList = new List<string>();
-            int[] givenLettersArray = BuildOccurenceArray(givenLetters);
-
-            // Take each word and if it's of an appropriate length, turn it into an occurency array and measure it against the character set.
-            foreach (string word in dictionary)
+            try
             {
-                if (word.Length > 2 && word.Length < 8)
+                // Turns the character set into an "occurence array" and initilizes a list to store matching words
+                List<string> matchingWordsList = new List<string>();
+                int[] givenLettersArray = BuildOccurenceArray(givenLetters);
+
+                // Take each word and if it's of an appropriate length, turn it into an occurency array and measure it against the character set.
+                foreach (string word in dictionary)
                 {
-                    int[] wordArray = BuildOccurenceArray(word);
+                    if (word.Length > 2 && word.Length < 8)
+                    {
+                        int[] wordArray = BuildOccurenceArray(word);
 
-                    // If it matches, add it to the list.
-                    if (TestIfMatching(givenLettersArray, wordArray) == true)
-                        matchingWordsList.Add(word);
+                        // If it matches, add it to the list.
+                        if (TestIfMatching(givenLettersArray, wordArray) == true)
+                            matchingWordsList.Add(word);
+                    }
                 }
-            }
 
-            string[] matchingWordsArray = matchingWordsList.ToArray();
-            return matchingWordsArray;
+                string[] matchingWordsArray = matchingWordsList.ToArray();
+                return matchingWordsArray;
+            }
+            catch
+            {
+                throw new ArgumentOutOfRangeException(givenLetters, "String must be only contain chars between a-z");
+            }
         }
 
         /// <summary>
@@ -79,23 +93,23 @@ namespace WordscapesCheat
         /// <returns></returns>
         public static string[] BuildMatchingWordsArray(string givenLetters, List<string> dictionary, int wordLength)
         {
-            List<string> matchingWordsList = new List<string>();
-            int[] givenLettersArray = BuildOccurenceArray(givenLetters);
+                List<string> matchingWordsList = new List<string>();
+                int[] givenLettersArray = BuildOccurenceArray(givenLetters);
 
-            foreach (string word in dictionary)
-            {
-                // Behaves the same as the previous method, but this time only returns word of a length thst is passed to it.
-                if (word.Length == wordLength)
+                foreach (string word in dictionary)
                 {
-                    int[] wordArray = BuildOccurenceArray(word);
+                    // Behaves the same as the previous method, but this time only returns word of a length thst is passed to it.
+                    if (word.Length == wordLength)
+                    {
+                        int[] wordArray = BuildOccurenceArray(word);
 
-                    if (TestIfMatching(givenLettersArray, wordArray) == true)
-                        matchingWordsList.Add(word);
+                        if (TestIfMatching(givenLettersArray, wordArray) == true)
+                            matchingWordsList.Add(word);
+                    }
                 }
-            }
 
-            string[] matchingWordsArray = matchingWordsList.ToArray();
-            return matchingWordsArray;
+                string[] matchingWordsArray = matchingWordsList.ToArray();
+                return matchingWordsArray;
         }
 
         /// <summary>
@@ -105,7 +119,6 @@ namespace WordscapesCheat
         /// <param name="wordArray"></param>
         /// <returns></returns>
         internal static bool TestIfMatching(int[] givenLettersArray, int[] wordArray)
-            // I changed this from private to protected so that the tests class could inherit it
         {
             // For each element in the array of a word, if it isn't greater than what's in the array of the character set, then return false. 
             for (int i = 0; i < givenLettersArray.Length; i++)
