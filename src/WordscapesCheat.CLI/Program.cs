@@ -7,6 +7,9 @@ using WordscapesCheat;
 
 namespace WordscapesCheat.CLI
 {
+    /// <summary>
+    /// The class that contains the application entry point (aka Main).
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -27,7 +30,7 @@ namespace WordscapesCheat.CLI
             //We can use the other args for other stuff later
             //e.g. word count or letter position
             string characterSet = args[0];
-            List<string> dictionary = CheatFunctions.GetDictionary();
+            List<string> dictionary = Data.DictionaryInstances.TwoOfTwelveInf;
             PrintMatchingWords(CheatFunctions.BuildMatchingWordsArray(characterSet, dictionary));
         }
 

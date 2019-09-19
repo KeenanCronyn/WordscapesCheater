@@ -57,14 +57,19 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CheatFunctionsTests.cs" />
+    <Compile Include="DictionaryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WordscapesCheat.Data\WordscapesCheat.Data.csproj">
+      <Project>{93eb76d9-a0ef-4d49-9023-a91129ecd5b4}</Project>
+      <Name>WordscapesCheat.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WordscapesCheat\WordscapesCheat.csproj">
-      <Project>{A3415268-B8C1-4A07-AF24-EF2CFD2C7E95}</Project>
+      <Project>{a3415268-b8c1-4a07-af24-ef2cfd2c7e95}</Project>
       <Name>WordscapesCheat</Name>
     </ProjectReference>
   </ItemGroup>

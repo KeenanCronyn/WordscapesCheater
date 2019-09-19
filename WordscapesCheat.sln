@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordscapesCheat", "src\Word
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordscapesCheatTests", "src\WordscapesCheatTests\WordscapesCheatTests.csproj", "{5EFBD464-67C6-4C0B-906F-09BCAD230A37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordscapesCheat.Data", "src\WordscapesCheat.Data\WordscapesCheat.Data.csproj", "{93EB76D9-A0EF-4D49-9023-A91129ECD5B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5EFBD464-67C6-4C0B-906F-09BCAD230A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EFBD464-67C6-4C0B-906F-09BCAD230A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EFBD464-67C6-4C0B-906F-09BCAD230A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93EB76D9-A0EF-4D49-9023-A91129ECD5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93EB76D9-A0EF-4D49-9023-A91129ECD5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93EB76D9-A0EF-4D49-9023-A91129ECD5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93EB76D9-A0EF-4D49-9023-A91129ECD5B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
