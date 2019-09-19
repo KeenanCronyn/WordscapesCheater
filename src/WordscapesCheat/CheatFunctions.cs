@@ -2,27 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using WordscapesCheat.Properties;
 
 namespace WordscapesCheat
 {
+    /// <summary>
+    /// Static class containing the main WordscapesCheat functions.
+    /// </summary>
     public static class CheatFunctions
     {
         /// <summary>
-        /// This returns a list that functions as a dictionary.
-        /// </summary>
-        public static List<string> GetDictionary()
-        {
-            return Resources._2of12inf.Split(
-                new[] { Environment.NewLine },
-                StringSplitOptions.RemoveEmptyEntries)
-                .Select(x => x.TrimEnd(new[] { '%', '!' }))
-                .ToList();
-        }
-
-        /// <summary>
-        /// Takes an input string and turns it into an array that shows how many times each A-Z letter appears in a given string.
+        /// Takes an input string and turns it into an array that shows 
+        /// how many times each A-Z letter appears in a given string.
         /// </summary>
         /// <param name="inputString"></param>
         /// <returns></returns>
@@ -32,7 +22,8 @@ namespace WordscapesCheat
             const int A_ASCII = 97;
             int[] occurenceArray = new int[26];
 
-            // For each character in the input string, based on its ASCII code, add it to the above array at the appropriate point.
+            // For each character in the input string, based on its ASCII code, 
+            // add it to the above array at the appropriate point.
             foreach (byte b in Encoding.ASCII.GetBytes(inputString.ToLower()))
             {
                 occurenceArray[b - A_ASCII]++;
@@ -49,11 +40,13 @@ namespace WordscapesCheat
         /// <returns></returns>
         public static string[] BuildMatchingWordsArray(string givenLetters, List<string> dictionary)
         {
-            // Turns the character set into an "occurence array" and initilizes a list to store matching words
+            // Turns the character set into an "occurence array" and 
+            // initialises a list to store matching words
             List<string> matchingWordsList = new List<string>();
             int[] givenLettersArray = BuildOccurenceArray(givenLetters);
 
-            // Take each word and if it's of an appropriate length, turn it into an occurency array and measure it against the character set.
+            // Take each word and if it's of an appropriate length, turn it into an 
+            // occurency array and measure it against the character set.
             foreach (string word in dictionary)
             {
                 if (word.Length > 2 && word.Length < 8)
@@ -71,7 +64,8 @@ namespace WordscapesCheat
         }
 
         /// <summary>
-        /// This take a string of letters, a list of words, and an int, and then returns words of a certain length in the list that match the string.
+        /// This take a string of letters, a list of words, and an int, and then returns 
+        /// words of a certain length in the list that match the string.
         /// </summary>
         /// <param name="givenLetters"></param>
         /// <param name="dictionary"></param>
@@ -84,7 +78,8 @@ namespace WordscapesCheat
 
             foreach (string word in dictionary)
             {
-                // Behaves the same as the previous method, but this time only returns word of a length thst is passed to it.
+                // Behaves the same as the previous method, but this time only returns 
+                // word of a length that is passed to it.
                 if (word.Length == wordLength)
                 {
                     int[] wordArray = BuildOccurenceArray(word);
@@ -105,9 +100,9 @@ namespace WordscapesCheat
         /// <param name="wordArray"></param>
         /// <returns></returns>
         internal static bool TestIfMatching(int[] givenLettersArray, int[] wordArray)
-            // I changed this from private to protected so that the tests class could inherit it
         {
-            // For each element in the array of a word, if it isn't greater than what's in the array of the character set, then return false. 
+            // For each element in the array of a word, if it isn't greater than 
+            // what's in the array of the character set, then return false. 
             for (int i = 0; i < givenLettersArray.Length; i++)
             {
                 if (wordArray[i] > givenLettersArray[i])

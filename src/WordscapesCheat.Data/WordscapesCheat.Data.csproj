@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FF29FD59-7363-4B26-A24B-92FDDD8A2E51}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>WordscapesCheat.CLI</RootNamespace>
-    <AssemblyName>wsc</AssemblyName>
+    <ProjectGuid>{93EB76D9-A0EF-4D49-9023-A91129ECD5B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WordscapesCheat.Data</RootNamespace>
+    <AssemblyName>WordscapesCheat.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DictionaryInstances.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Resources\2of12inf.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WordscapesCheat.Data\WordscapesCheat.Data.csproj">
-      <Project>{93eb76d9-a0ef-4d49-9023-a91129ecd5b4}</Project>
-      <Name>WordscapesCheat.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WordscapesCheat\WordscapesCheat.csproj">
-      <Project>{a3415268-b8c1-4a07-af24-ef2cfd2c7e95}</Project>
-      <Name>WordscapesCheat</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
